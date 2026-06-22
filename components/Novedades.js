@@ -17,6 +17,8 @@ const NOMBRES_DESTACADOS = [
   "La Belle",
   "Erba Pura",
   "Ombré Leather",
+  "Le Male Estuche Eau de Toilette Hombre",
+  "Born in Roma Pink Uomo Estuche",
 ];
 
 export default function Novedades() {

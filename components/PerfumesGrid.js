@@ -16,6 +16,7 @@ export default function PerfumesGrid({
   const [error, setError] = useState(null);
   const [search, setSearch] = useState("");
   const [gender, setGender] = useState("Todos");
+  const [categoria, setCategoria] = useState(null);
   const [page, setPage] = useState(1);
 
   useEffect(() => {
@@ -60,6 +61,7 @@ export default function PerfumesGrid({
 
   const filtered = list
     .filter((p) => gender === "Todos" || p.genero === gender)
+    .filter((p) => !categoria || p.categoria === categoria)
     .filter((p) => {
       const q = search.toLowerCase();
       return (
@@ -85,6 +87,11 @@ export default function PerfumesGrid({
     setPage(1);
   }
 
+  function handleCategoria() {
+    setCategoria((prev) => (prev === "Estuche" ? null : "Estuche"));
+    setPage(1);
+  }
+
   return (
     <div>
       <input
@@ -95,7 +102,7 @@ export default function PerfumesGrid({
         className="w-full mb-4 px-4 py-2 rounded-lg bg-[#111] border border-[#333] text-white placeholder-white/40 focus:outline-none focus:border-turquoise"
       />
 
-      <div className="flex flex-wrap gap-2 mb-4">
+      <div className="flex flex-wrap gap-2 mb-3">
         {GENDERS.map((g) => (
           <button
             key={g}
@@ -109,6 +116,19 @@ export default function PerfumesGrid({
             {g}
           </button>
         ))}
+      </div>
+
+      <div className="flex flex-wrap gap-2 mb-4">
+        <button
+          onClick={handleCategoria}
+          className={`px-4 py-1.5 rounded-full text-sm font-medium border transition-colors ${
+            categoria === "Estuche"
+              ? "bg-turquoise text-black border-turquoise"
+              : "bg-transparent text-white/70 border-white/30 hover:border-turquoise hover:text-turquoise"
+          }`}
+        >
+          Estuches
+        </button>
       </div>
 
       <p className="text-sm text-foreground/60 mb-6">

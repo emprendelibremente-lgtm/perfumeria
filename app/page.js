@@ -6,6 +6,37 @@ import { getWhatsAppLink } from "@/lib/constants";
 import PerfumesGrid from "@/components/PerfumesGrid";
 import Novedades from "@/components/Novedades";
 
+const TIENDAS = [
+  {
+    nombre: "CC Boulevard Los Mangos",
+    imagen: "/tienda-boulevard.jpg",
+    ubicacion:
+      "Centro Comercial Boulevard Los Mangos, Barrio Obrero, San Cristóbal, Venezuela",
+    horario: "Lunes a Sábado · 8:30 AM – 7:00 PM",
+    comoLlegar:
+      "Entrando por el pasillo central, camina al fondo y encontrarás Fragancias Perfumería.",
+    servicios: ["Asesoría personalizada"],
+    estacionamiento: null,
+    mapsUrl:
+      "https://maps.google.com/?q=Centro+Comercial+Boulevard+Los+Mangos+San+Cristobal+Venezuela",
+  },
+  {
+    nombre: "Hotel Tamá Eurobuilding",
+    imagen: "/tienda-tama.jpeg",
+    ubicacion:
+      "Hotel Tamá Eurobuilding, Local 1, San Cristóbal, Venezuela",
+    horario:
+      "Lunes a Sábado · 9:00 AM – 9:00 PM · Domingos · 10:00 AM – 7:00 PM",
+    comoLlegar:
+      "Entra al lobby del hotel, camina por el pasillo a mano izquierda justo después de entrar.",
+    servicios: ["Asesoría personalizada"],
+    estacionamiento:
+      "Estacionamiento privado del hotel disponible — solo menciona que vas a la perfumería.",
+    mapsUrl:
+      "https://maps.google.com/?q=Hotel+Tama+Eurobuilding+San+Cristobal+Venezuela",
+  },
+];
+
 const STEPS = [
   {
     title: "Elige tus fragancias",
